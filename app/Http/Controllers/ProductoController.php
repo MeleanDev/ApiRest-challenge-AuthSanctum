@@ -40,4 +40,11 @@ class ProductoController extends Controller
     public function producto(Producto $id){
         return response()->json($id);
     }
+
+    public function eliminar(Producto $id){
+        $this->productoClass->eliminar($id);
+        return response()->json([
+            'mensaje' => 'Producto eliminado'
+        ]);
+    }
 }

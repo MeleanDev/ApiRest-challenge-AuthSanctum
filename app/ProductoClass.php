@@ -25,4 +25,8 @@ class ProductoClass
         }
     
     }
+
+    public function eliminar($id){
+        $id->delete();
+    }
 }
