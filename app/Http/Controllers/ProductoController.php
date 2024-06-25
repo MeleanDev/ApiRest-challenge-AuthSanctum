@@ -41,6 +41,19 @@ class ProductoController extends Controller
         return response()->json($id);
     }
 
+    public function editar(ProductoRequest $datos, Producto $id){
+        $repuesta = $this->productoClass->editar($datos, $id);
+        if ($repuesta == true) {
+            return response()->json([
+                'mensaje' => 'Producto editado con exito',
+            ], 200);
+        }
+        return response()->json([
+            'mensaje' => 'Error en la edicion del producto',
+        ], 400);
+
+    }
+
     public function eliminar(Producto $id){
         $this->productoClass->eliminar($id);
         return response()->json([

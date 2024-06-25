@@ -26,6 +26,20 @@ class ProductoClass
     
     }
 
+    public function editar($datos, $producto){
+        try {
+            $producto->nombre = $datos->nombre;
+            $producto->descripcion = $datos->descripcion;
+            $producto->precio = $datos->precio;
+            $producto->disponible = $datos->disponible;
+            $producto->save();
+            return $datos = true;
+        } catch (\Throwable $th) {
+            return $datos = false;
+        }
+    
+    }
+
     public function eliminar($id){
         $id->delete();
     }
