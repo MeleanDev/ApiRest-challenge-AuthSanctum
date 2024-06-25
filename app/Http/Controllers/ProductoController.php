@@ -36,4 +36,8 @@ class ProductoController extends Controller
         ], 400);
 
     }
+
+    public function producto(Producto $id){
+        return response()->json($id);
+    }
 }
