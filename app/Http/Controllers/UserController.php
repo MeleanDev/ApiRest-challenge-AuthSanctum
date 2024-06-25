@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegistroRequest;
 use App\Service\AuthClass;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -43,5 +44,10 @@ class UserController extends Controller
             'accessToken' => $token,
             'token_type' => 'Bearer'
         ], 200);
+    }
+
+    public function logout(Request $request){
+        $request->user()->tokens()->delete();
+        return ['mensaje' => 'Logout Exitoso'];
     }
 }
