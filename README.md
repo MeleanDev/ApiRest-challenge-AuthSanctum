@@ -5,7 +5,6 @@ Se requiere que los usuarios autenticados puedan ver la lista de productos, para
 Tarea:
 1. Realizar endpoints para (registrarse, logiarse y cerrar sesion) de los usuarios.
 2. Realizar endpoints para CRUD donde los usuarios logiados puedan dar (Alta, Baja, Modificación, Borrado) de los productos.
-3. Realizar un endpoint que devuelva un usuario especifico.
 4. Realizar un endpoint que devuelva un producto especifico.
 
 Información necesaria:
