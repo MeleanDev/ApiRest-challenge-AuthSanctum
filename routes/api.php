@@ -10,4 +10,5 @@ Route::get('/user', function (Request $request) {
 
 Route::controller(UserController::class)->group(function () {
     Route::post('registro', 'registro');
+    Route::post('Login', 'login');
 });
