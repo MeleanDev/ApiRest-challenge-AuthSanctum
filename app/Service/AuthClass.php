@@ -19,4 +19,9 @@ class AuthClass
             return $datos = false;
         }
     }
+
+    public function buscarUser($email){
+        $datos = User::where('email', $email)->firstOrFail();
+        return $datos;
+    }
 }
