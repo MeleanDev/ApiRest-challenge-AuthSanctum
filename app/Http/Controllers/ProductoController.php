@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProductoRequest;
 use App\Models\Producto;
 use App\ProductoClass;
+use Illuminate\Http\Request;
 
 class ProductoController extends Controller
 {
@@ -59,5 +60,17 @@ class ProductoController extends Controller
         return response()->json([
             'mensaje' => 'Producto eliminado'
         ]);
+    }
+
+    public function reset(Request $dato){
+        $eliminacion = $this->productoClass->resetTabla($dato->baja);
+        if ($eliminacion == true) {
+            return response()->json([
+                'message' => 'Todos los registros eliminado'
+            ], 200);
+        }
+        return response()->json([
+            'message' => 'Registros no eliminado'
+        ], 400);
     }
 }

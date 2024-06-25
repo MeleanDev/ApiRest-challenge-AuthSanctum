@@ -17,5 +17,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('Productos', 'crear');
         Route::put('Productos/{id}', 'editar');
         Route::delete('Productos/{id}', 'eliminar');
+        Route::post('Productos/Reset', 'reset');
     });
 });

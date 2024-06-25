@@ -43,4 +43,13 @@ class ProductoClass
     public function eliminar($id){
         $id->delete();
     }
+
+    public function resetTabla($datos){
+        $eliminado = false;
+        if ($datos == 'baja') {
+            Producto::truncate();
+            $eliminado = true;
+        }
+        return $eliminado;
+    }
 }
